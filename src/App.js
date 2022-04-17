@@ -1,43 +1,28 @@
-import React, { useEffect, useState } from "react";
-import Logo from "./assets/altafino.svg";
-import "./app.styles.scss";
-import { searchRepos } from "./services/githubService";
-import RepositoriesPage from "./pages/RepositoriesPage";
-import SettingPage from "./pages/SettingPage";
-import Nav from "./components/Nav";
+import React, { useState } from 'react'
+import Logo from './assets/altafino.svg'
+import './app.styles.scss'
+import RepositoriesPage from './pages/RepositoriesPage'
+import SettingPage from './pages/SettingPage'
+import Nav from './components/Nav'
 
-const REPOS_PAGE = "repositories";
-const SETTING_PAGE = "setting";
+const REPOS_PAGE = 'repositories'
+const SETTING_PAGE = 'settings'
 
-const NAV_ITEMS = [{ name: "repostories" }, { name: "setting" }];
+const NAV_ITEMS = [{ name: REPOS_PAGE }, { name: SETTING_PAGE }]
 
 export default function App() {
-  const [page, setPage] = useState(REPOS_PAGE);
-
-  useEffect(() => {
-    console.log("hello world");
-    const params = {
-      q: "org:vacasaoss",
-      sort: "stars",
-      order: "desc"
-    };
-    const result = searchRepos(params);
-
-    result.then(result => {
-      console.log(result.data);
-    });
-  }, []);
-
+  const [page, setPage] = useState(REPOS_PAGE)
+  
   return (
     <>
       <header>
-        <Nav />
-        <h1>{page}</h1>
+        <Nav navItems={NAV_ITEMS} setPage={setPage} />
+        <h1 className='container px-6 py-3 mx-auto text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white'>{page}</h1>
       </header>
       <main>
         {page === REPOS_PAGE && <RepositoriesPage />}
         {page === SETTING_PAGE && <SettingPage />}
       </main>
     </>
-  );
+  )
 }
