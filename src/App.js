@@ -1,30 +1,43 @@
-import { Component } from 'react'
+import React, { useEffect, useState } from "react";
+import Logo from "./assets/altafino.svg";
+import "./app.styles.scss";
+import { searchRepos } from "./services/githubService";
+import RepositoriesPage from "./pages/RepositoriesPage";
+import SettingPage from "./pages/SettingPage";
+import Nav from "./components/Nav";
 
-import Logo from './assets/altafino.svg'
-import './app.styles.scss'
+const REPOS_PAGE = "repositories";
+const SETTING_PAGE = "setting";
 
-class App extends Component {
-  render() {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <div className='text-black font-bold rounded-lg border shadow-lg p-10 m-20'>
-          <div>
-            Webpack 6 boilerplate with React 17, Tailwind 2, using babel, sass,
-            with a hot dev server and an optimized production build.
-            <div className={'bg-red-500 text-white'}>
-              process.env.API_URL:{process.env.API_URL} !!! Make sure to put
-              both .env.* files in gitignore.
-            </div>
-            <div className={'container mx-auto px-4'}>
-              <a href={'https://altafino.com'}>
-                <Logo className={'mt-10 px-10'} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
+const NAV_ITEMS = [{ name: "repostories" }, { name: "setting" }];
+
+export default function App() {
+  const [page, setPage] = useState(REPOS_PAGE);
+
+  useEffect(() => {
+    console.log("hello world");
+    const params = {
+      q: "org:vacasaoss",
+      sort: "stars",
+      order: "desc"
+    };
+    const result = searchRepos(params);
+
+    result.then(result => {
+      console.log(result.data);
+    });
+  }, []);
+
+  return (
+    <>
+      <header>
+        <Nav />
+        <h1>{page}</h1>
+      </header>
+      <main>
+        {page === REPOS_PAGE && <RepositoriesPage />}
+        {page === SETTING_PAGE && <SettingPage />}
+      </main>
+    </>
+  );
 }
-
-export default App
