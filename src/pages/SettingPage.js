@@ -10,22 +10,7 @@ const SettingPage = () => (
       <div className='container px-6 py-10 mx-auto'>
         <div className='p-6 border rounded-xl border-r-gray-200 dark:border-gray-700'>
           <div className='md:flex md:items-start md:-mx-4'>
-            <span className='inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='w-6 h-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
-                />
-              </svg>
-            </span>
+            <img className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300" src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="" />
 
             <div className='mt-4 md:mx-4 md:mt-0'>
               <h3 className='text-2xl font-medium text-gray-700 capitalize dark:text-white'>
