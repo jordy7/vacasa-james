@@ -25,7 +25,7 @@ const Nav = ({ navItems = [], setPage = () => {} }) => (
 
         {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
         <div className='w-full md:flex md:items-center md:justify-between'>
-          <div className='flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0'>
+          <div className='flex flex-col pr-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0'>
             {navItems.map((item, index) => {
               const { name } = item
               return (
@@ -35,7 +35,7 @@ const Nav = ({ navItems = [], setPage = () => {} }) => (
                   onClick={() => {
                     setPage(name)
                   }}
-                  className='px-2 py-1 text-sm capitalize font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'
+                  className='px-4 py-1 text-sm capitalize font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mr-2'
                 >
                   {name}
                 </a>
