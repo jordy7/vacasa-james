@@ -35,7 +35,7 @@ const Nav = ({ navItems = [], setPage = () => {} }) => (
                   onClick={() => {
                     setPage(name)
                   }}
-                  className='px-4 py-1 text-sm capitalize font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mr-2'
+                  className='nav-item px-4 py-1 text-sm capitalize font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mr-2'
                 >
                   {name}
                 </a>

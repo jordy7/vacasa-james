@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import App from './App'
 
-test('check first div text', () => {
-  render(<App />)
-  const linkElement = screen.getByText(
-    /Webpack 6 boilerplate with React 17, Tailwind 2, using babel/i
-  )
-  expect(linkElement).toBeInTheDocument()
+describe('App', () => {
+  test('render 1 header and 1 main', () => {
+    const { container } = render(<App />)
+    expect(container.querySelectorAll('header').length).toBe(1);
+    expect(container.querySelectorAll('main').length).toBe(1);
+  })
 })
