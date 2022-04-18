@@ -1,37 +1,3 @@
-# unmaintained
-I am not more maintain this project actively for different reasons. One is, that with Vite we have a nicer way to handle different aspects, other is time.
-But I check and can accept pull requests.
-
-### Visit my [Job Board for React Jobs](https://reactjsjob.com)
-
-
-# react-webpack-6-tailwind-2
-
-React 17 Boilerplate with React 17, Webpack 6, Tailwind 2, HMR, using babel, Jest unit testing, sass, with a hot dev server and an optimized production build
-
-[Demo](https://dreamy-shirley-041c74.netlify.app/)
-
-Maintained by [Altafino - Full-Stack Go/JS Development](https://altafino.com)
-
-## Last Changes (the newest first):
-
-- added full support for unit testing (with file mocks) using Jest
-- added SVGR as a webpack loader to import your SVG directly as a React Component.
-- added build-staging script. same as build but using .env.staging
-- added dotenv-webpack to handle process.env.VARS
-- added Prettier
-- added react-refresh-webpack-plugin for HMR
-
-## Installation
-
-```
-git clone https://github.com/altafino/react-webpack-5-tailwind-2.git
-cd react-webpack-5-tailwind-2
-yarn / npm i
-```
-
-To use it for your own project the easiest way is to use the green Template Button on top right of this repo on Github.
-
 ## Usage
 
 ### Development server
